@@ -1,0 +1,7 @@
+{
+  "name": "Lingo",
+  "description": "A real-time AI translation agent supporting multiple languages with voice-to-voice capabilities and premium subscription tiers.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#4f46e5" />
+    <meta name="description" content="Real-time AI Voice Translator" />
+    <title>Lingo Translator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="manifest" href="manifest.json" />
+    <style>
+      /* Custom scrollbar for better aesthetics */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c7c7c7;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-50 text-slate-900 antialiased overflow-hidden">
+    <div id="root"></div>
+    <!-- PWA Manifest simulation for the browser to recognize it broadly -->
+    <script>
+      const manifest = {
+        "short_name": "Lingo",
+        "name": "Lingo AI Translator",
+        "icons": [
+          {
+            "src": "https://picsum.photos/192/192",
+            "type": "image/png",
+            "sizes": "192x192"
+          },
+          {
+            "src": "https://picsum.photos/512/512",
+            "type": "image/png",
+            "sizes": "512x512"
+          }
+        ],
+        "start_url": ".",
+        "display": "standalone",
+        "theme_color": "#4f46e5",
+        "background_color": "#ffffff"
+      };
+      const stringManifest = JSON.stringify(manifest);
+      const blob = new Blob([stringManifest], {type: 'application/json'});
+      const manifestURL = URL.createObjectURL(blob);
+      document.querySelector('link[rel="manifest"]').setAttribute('href', manifestURL);
+    </script>
+  </body>
+</html>
